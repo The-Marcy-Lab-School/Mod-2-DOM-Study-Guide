@@ -1,5 +1,10 @@
 # Unit 2 - DOM Manipulation
 
+**Table of Contents:**
+- [Forms](#forms)
+- [Event Listeners / Event Handlers](#event-listeners--event-handlers)
+- [DOM CRUD Basics](#dom-crud-basics)
+
 ## Forms
 
 Forms are used for a variety of things. For example:
