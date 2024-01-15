@@ -15,8 +15,8 @@ Forms are used for a variety of things. For example:
 Forms have a very specific structure:
 
 ```html
-<form aria-label="pokemon search form" id="pokemon-search-form">
-  <h2>Find a Pokemon</h2>
+<form id="pokemon-search-form" aria-labelledby="pokemon-search-header">
+  <h2 id="pokemon-search-header">Find a Pokemon</h2>
   <label for="pokemon">Pokemon Name:</label>
   <input type="text" name="pokemon" id="pokemon-input" />
   <button type="submit">Submit</button>
@@ -24,8 +24,8 @@ Forms have a very specific structure:
 ```
 
 Every form should have:
-* An `aria-label` for screen readers
 * An `id` for easy DOM targeting
+* An `aria-labelled-by` for screen readers referencing the `id` of the `h2` (if there isn't a visible `h2`, use `aria-label`) 
 * An `h2`, also for screen readers
 * `label` and `input` elements. 
   * For every `input`, you must have an `label`
@@ -73,6 +73,10 @@ form.addEventListener('submit', (e) => {
   // the FormData API makes it SUPER easy to get an object with all form data with 2 steps:
   const formData = new FormData(e.target);
   const formObj = Object.fromEntries(formData);
+
+  // Checkbox data in the formObj will either be "on" or undefined
+  // We can convert those values to true/false
+  formObj.checkedProperty = !!formObj.checkedProperty
 
   console.log('here is your data:', formObj.pokemon);
 
@@ -129,6 +133,6 @@ someDiv.remove();
 **<details><summary style="color: purple">Q: When is it appropriate to use `.innerHTML` to change the contents of an element?</summary>**
 
 > We can use `.innerHTML` if we are in full control of how we are changing the `.innerHTML`. For example, we can use it to clear out the contents of an element, or to insert child elements with a known structure. 
-> We should NEVER use `.innerHTML` to insert HTML elements that are in any way generated dynamically by the user.
+> We should NEVER use `.innerHTML` to insert HTML elements that are in any way generated dynamically by the user unless we first "sanitize" the user data of malicious code. This is called "escaping".
 
 </details><br>
