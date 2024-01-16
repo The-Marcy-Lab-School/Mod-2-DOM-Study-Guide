@@ -78,7 +78,7 @@ form.addEventListener('submit', (e) => {
   // We can convert those values to true/false
   formObj.checkedProperty = !!formObj.checkedProperty
 
-  console.log('here is your data:', formObj.pokemon);
+  console.log('here is your data:', formObj);
 
   // do something with the form
 
