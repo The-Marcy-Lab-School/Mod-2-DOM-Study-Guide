@@ -136,3 +136,9 @@ someDiv.remove();
 > We should NEVER use `.innerHTML` to insert HTML elements that are in any way generated dynamically by the user unless we first "sanitize" the user data of malicious code. This is called "escaping".
 
 </details><br>
+
+## Todo App Challenge
+
+As a challenge, build a todo app as shown below. The application should have a form with at least two inputs: a text input and a checkbox input. Upon submission, it should add a new todo to a list. In this example, I also print out the data from the form.
+
+![A todo app with a text input and a checkbox. New todos are presented in a list with incomplete or complete next to their text.](images/todo-list.png)
