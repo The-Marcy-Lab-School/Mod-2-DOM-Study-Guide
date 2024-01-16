@@ -137,8 +137,52 @@ someDiv.remove();
 
 </details><br>
 
+## Data Attributes
+
+The syntax is simple. Any attribute on any element whose attribute name starts with `data-` is a data attribute. 
+
+Say you have an article and you want to store some extra information that doesn't have any visual representation. Just use `data` attributes for that:
+
+```html
+<section id="cars">
+  <article
+    id="electric-cars"
+    data-columns="3"
+    data-index-number="12314"
+    data-parent="cars">
+  </article>
+  ...
+</section>
+```
+
+Reading the values of these attributes out in JavaScript is also very simple. You could use `getAttribute()` with their full HTML name to read them (`.getAttribute('data-columns')`), but the standard defines a simpler way: a `DOMStringMap` you can read out via a `dataset` property.
+
+To get a data attribute through the dataset object, get the property by the part of the attribute name after `data-` (note that dashes are converted to camel case).
+
+```js
+const article = document.querySelector("#electric-cars");
+
+article.dataset.columns; // "3"
+article.dataset.indexNumber; // "12314"
+article.dataset.parent; // "cars"
+```
+
+**<details><summary style="color: purple">Suppose you had an HTML element `<p id='name' data-myName='ben' />My name is ben</p>` How would you access the `data-my-name` attribute value in JavaScript?</summary>**
+
+```js
+const p = document.querySelector("#name");
+p.dataset.myName; // "3"
+```
+
+</details><br>
+
 ## Todo App Challenge
 
-As a challenge, build a todo app as shown below. The application should have a form with at least two inputs: a text input and a checkbox input. Upon submission, it should add a new todo to a list. In this example, I also print out the data from the form.
+As a challenge, build a todo app as shown below. The application should:
+* have a form with at least two inputs: a text input and a checkbox input. 
+* Upon submission, it should
+  * Add a new element to a list with the text of the todo and whether or not it was complete.
+  * Store the `isComplete` value as a `data-` attribute and then style elements with a `text-decoration: line-through` style based on the `data-` attribute value
+  * In this example, I also print out the data from the form. 
 
-![A todo app with a text input and a checkbox. New todos are presented in a list with incomplete or complete next to their text.](images/todo-list.png)
+![A todo app with a text input and a checkbox. New todos are presented in a list with incomplete or complete next to their text. Complete items are striked through.](images/todo-app.png)
