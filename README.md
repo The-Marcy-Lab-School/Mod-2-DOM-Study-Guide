@@ -167,7 +167,7 @@ article.dataset.indexNumber; // "12314"
 article.dataset.parent; // "cars"
 ```
 
-**<details><summary style="color: purple">Suppose you had an HTML element `<p id='name' data-myName='ben' />My name is ben</p>` How would you access the `data-my-name` attribute value in JavaScript?</summary>**
+**<details><summary style="color: purple">Q: Suppose you had an HTML element `<p id='name' data-myName='ben' />My name is ben</p>` How would you access the `data-my-name` attribute value in JavaScript?</summary>**
 
 ```js
 const p = document.querySelector("#name");
