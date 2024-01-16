@@ -4,6 +4,7 @@
 - [Forms](#forms)
 - [Event Listeners / Event Handlers](#event-listeners--event-handlers)
 - [DOM CRUD Basics](#dom-crud-basics)
+- [Todo App Challenge](#todo-app-challenge)
 
 ## Forms
 
