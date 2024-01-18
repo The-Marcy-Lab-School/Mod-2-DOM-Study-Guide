@@ -9,9 +9,25 @@
     <link rel="shortcut icon" href="#" />
     <style>
       /* Add your styles here: */
+      li[data-is-complete="true"] {
+        text-decoration: line-through;
+      }
     </style>
   </head>
   <body>
     <!-- Add your HTML elements here -->
+    <main>
+      <h1>Todo List</h1>
+      <form aria-labelledby="todo-header" id="todo-form">
+        <h2 id="todo-header">Add A Todo</h2>
+        <label for="todo-input">Todo:</label>
+        <input type="text" name="todo" id="todo-input" />
+        <label for="is-complete-input">Is Complete:</label>
+        <input type="checkbox" name="isComplete" id="is-complete-input" />
+        <button type="submit">Add</button>
+      </form>
+      <h2>Todos:</h2>
+      <ul id="todo-list"></ul>
+    </main>
   </body>
 </html>

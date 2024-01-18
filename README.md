@@ -96,6 +96,45 @@ The callback provided to `addEventListener` is invoked with an `Event` object, t
 
 </details><br>
 
+## Event Delegation
+
+Event delegation is the idea that you can have **a single event listener** on a **parent element** that can handle events for all of its **children**. 
+
+This is useful for child elements that are added/removed dynamically. Like when a user adds a new item to a list.
+
+```html
+<ul id="counting-list">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+```
+
+This example has the `ul` listening for clicks on the child `li` Elements. If a click is detected, the number of the `li` that was clicked is saved and a new `li` is appended to the list with that number plus 1 (if the `li` with the number `2` is clicked, we'll add a new `li` to the list with the number `3`).
+
+```js
+const ul = document.querySelector('#counting-list');
+
+ul.addEventListener('click', (e) => {
+  // check if the target was an li in the counting list
+  if (e.target.matches('#counting-list>li')) { 
+    const clickedNum = Number(e.target.innerText);
+    const li = document.createElement('li');
+    li.innerText = clickedNum + 1
+    e.currentTarget.append(li);
+  }
+});
+```
+
+Because the new `li` Elements are also children of the `ul`, the new `li` Elements are also clickable! We don't need to add additional event listeners for each new `li` because the `ul` will handle it. It is important to use `e.target.matches()` to ensure that the target is an element we want to handle clicks on.
+
+Here's the pattern: 
+1. Grab a parent element
+2. Have it listen for events, it will detect events triggered by its children because of **propagation**
+3. Identify the target to decide what you want to do using `event.target.matches()`
+
+`event.target.classList.contains()` is also useful for identifying the target.
+
 ## DOM CRUD Basics
 
 Using the DOM API, we can perform basic CRUD operations:
