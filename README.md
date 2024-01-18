@@ -3,6 +3,7 @@
 **Table of Contents:**
 - [Forms](#forms)
 - [Event Listeners / Event Handlers](#event-listeners--event-handlers)
+- [Event Delegation](#event-delegation)
 - [DOM CRUD Basics](#dom-crud-basics)
 - [Data Attributes](#data-attributes)
 - [Todo App Challenge](#todo-app-challenge)
