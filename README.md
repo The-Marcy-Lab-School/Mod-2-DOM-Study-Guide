@@ -4,6 +4,7 @@
 - [Forms](#forms)
 - [Event Listeners / Event Handlers](#event-listeners--event-handlers)
 - [DOM CRUD Basics](#dom-crud-basics)
+- [Data Attributes](#data-attributes)
 - [Todo App Challenge](#todo-app-challenge)
 
 ## Forms
@@ -102,6 +103,8 @@ Using the DOM API, we can perform basic CRUD operations:
 * Get (Read) an existing element in the DOM
 * Update the properties of existing elements in the DOM
 * Delete existing elements from the DOM
+
+Below are examples of these essential DOM functions.
 
 ```js
 // Get elements from the DOM using document.querySelector
