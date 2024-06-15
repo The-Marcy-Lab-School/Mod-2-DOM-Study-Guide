@@ -1,4 +1,4 @@
-# Unit 2 - DOM Manipulation
+# Mod 2 - DOM Manipulation
 
 **Table of Contents:**
 - [Forms](#forms)
